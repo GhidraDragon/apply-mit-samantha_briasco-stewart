@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Showcase of Samantha Briasco-Stewart: Professional Experience at Twitch, Education at MIT, and Contact Information." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samantha "Erosolar" Briasco-Stewart: Experience & Accomplishments</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header, section, footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h1 {
+            margin: 20px 0;
+            font-size: 2em;
+            color: #6C63FF;
+        }
+
+        header p {
+            margin-bottom: 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        nav.main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav.main-nav li {
+            margin: 0;
+        }
+
+        nav.main-nav a {
+            display: block;
+            padding: 1em 2em;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+
+        nav.main-nav a:hover {
+            background: #444;
+        }
+
+        nav.main-nav a.active {
+            background: #555;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #6C63FF;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #333;
+        }
+
+        section {
+            background: #fff;
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 40px 20px;
+        }
+
+        p, ul, li {
+            font-size: 1em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Timeline for Experience Section */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 30px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            width: 4px;
+            height: 100%;
+            background: #ddd;
+        }
+
+        .timeline-event {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-event:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-event h3 {
+            font-size: 1.3em;
+            margin: 0;
+        }
+
+        .timeline-event p {
+            margin: 5px 0;
+            line-height: 1.4em;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 5px;
+            left: -12px;
+            width: 20px;
+            height: 20px;
+            background: #6C63FF;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 2px #6C63FF;
+        }
+
+        /* Gallery styling */
+        #gallery-section {
+            text-align: center;
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        img, video {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .contact-info {
+            font-size: 1em;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: #6C63FF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        // Minimal placeholder for media loading
+        window.addEventListener('DOMContentLoaded', function() {
+            fetch('./media-list.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load media-list.json: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(files => {
+                    const gallery = document.getElementById('gallery');
+                    files.forEach(file => {
+                        const fileType = file.split('.').pop().toLowerCase();
+                        let mediaElement;
+
+                        if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(fileType)) {
+                            mediaElement = document.createElement('img');
+                            mediaElement.src = file;
+                            mediaElement.alt = "Image";
+                        } else if (['mp4', 'webm', 'ogg'].includes(fileType)) {
+                            mediaElement = document.createElement('video');
+                            mediaElement.src = file;
+                            mediaElement.controls = true;
+                        }
+
+                        if (mediaElement) {
+                            gallery.appendChild(mediaElement);
+                        } else {
+                            console.warn('Unsupported file type:', file);
+                        }
+                    });
+                })
+                .catch(err => console.error('Error loading media:', err));
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Samantha "Erosolar" Briasco-Stewart</h1>
+        <p>Senior Software Engineer | MIT Graduate | Innovator in Live Streaming Technology</p>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#gallery-section">Gallery</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Intro Section -->
+        <section>
+            <h2>Introduction</h2>
+            <p>Samantha "Erosolar" Briasco-Stewart is a dynamic and highly accomplished Senior Software Engineer at Twitch. Her career reflects a rare synergy of technical prowess, creative problem-solving, and community-driven innovation. Armed with a robust academic foundation from the Massachusetts Institute of Technology (MIT), she excels in architecting complex systems, optimizing large-scale infrastructures, and ensuring secure, engaging user experiences in the ever-evolving landscape of live streaming.</p>
+            <p>Beyond her technical capabilities, Samantha thrives on facilitating global connections. Twitch, a platform beloved by creators and viewers worldwide, has benefited immensely from her contributions that enable seamless, real-time interaction. Through her leadership, mentorship, and technical direction, she continues to shape the future of digital entertainment—transforming how people interact, learn, and share content online.</p>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <p>Samantha’s professional trajectory is a testament to her ability to excel in highly challenging, fast-paced, and user-centric environments. From enhancing video playback at Twitch to securing systems against emerging threats, she has continually demonstrated adaptability, strategic foresight, and a deep commitment to quality.</p>
+
+            <div class="timeline">
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Senior Software Engineer, Twitch</h3>
+                    <p><em>Aug 2021 - Present (3 years 5 months)</em></p>
+                    <p><strong>San Francisco, California, United States</strong></p>
+                    <p><u>Key Contributions:</u></p>
+                    <ul>
+                        <li><strong>Architectural Leadership:</strong> Led the design and implementation of large-scale, event-driven services supporting live video streams, chat services, and recommendation engines. Oversaw refactoring efforts to decouple monolithic codebases into microservices, improving deployment velocity and system resilience.</li>
+                        <li><strong>Scalability & Performance:</strong> Introduced advanced load-balancing algorithms, caching layers, and optimized data pipelines to handle peak concurrency during major gaming tournaments and influencer-led events, ensuring minimal latency and seamless interaction for millions of concurrent viewers.</li>
+                        <li><strong>Platform Enhancements:</strong> Drove feature development aimed at improving viewer retention, including real-time community polls, interactive overlays, and integrated loyalty reward systems. Collaborated closely with UX designers and product managers to ensure that engineering solutions aligned with user feedback and business goals.</li>
+                        <li><strong>Team Mentorship & Culture:</strong> Mentored junior engineers, instilling best practices in code quality, continuous integration, and automated testing. Fostered a culture of experimentation, knowledge-sharing, and inclusivity, ensuring every team member felt empowered to contribute new ideas.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Software Engineer, Twitch</h3>
+                    <p><em>Apr 2020 - Aug 2021 (1 year 5 months)</em></p>
+                    <p><u>Key Contributions:</u></p>
+                    <ul>
+                        <li><strong>Frontend & Backend Integration:</strong> Implemented end-to-end features spanning both server-side API integration and front-end user interfaces. Optimized front-end rendering using frameworks like React and Next.js, reducing initial load times and improving the viewer engagement metrics.</li>
+                        <li><strong>Experimentation & A/B Testing:</strong> Leveraged data-driven methodologies to refine engagement features. Conducted A/B tests on chat enhancements and streamer toolkit updates, iterating on designs based on real-time feedback, resulting in higher community satisfaction.</li>
+                        <li><strong>Developer Experience Improvements:</strong> Collaborated with internal developer tooling teams to streamline CI/CD pipelines and enhance code review processes. This not only reduced deployment times but also improved code quality and made onboarding for new engineers smoother.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Security Engineer, Twitch</h3>
+                    <p><em>Jul 2018 - Apr 2020 (1 year 10 months)</em></p>
+                    <p><u>Key Contributions:</u></p>
+                    <ul>
+                        <li><strong>Proactive Threat Mitigation:</strong> Implemented robust authentication and authorization frameworks, employing OAuth 2.0 and JWT tokens. Detected and mitigated botnets and spam attacks, safeguarding the integrity and authenticity of viewer and creator interactions.</li>
+                        <li><strong>Encryption & Privacy:</strong> Oversaw the adoption of advanced encryption methods for sensitive user data, ensuring compliance with privacy regulations and maintaining user trust during a period of exponential platform growth.</li>
+                        <li><strong>Security Advocacy:</strong> Introduced secure coding guidelines, conducted periodic security workshops for engineers, and integrated continuous security scans, effectively embedding a security-first mindset across the organization.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Security Intern, Twitch</h3>
+                    <p><em>Jun 2017 - Sep 2017 (4 months)</em></p>
+                    <ul>
+                        <li>Performed vulnerability assessments, patched security gaps in internal APIs, and supported the deployment of automated scanners to identify and fix cross-site scripting (XSS) and SQL injection vulnerabilities.</li>
+                        <li>Gained foundational knowledge in compliance protocols and user data protection, setting the stage for future advancements in the security domain.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Web Playback Intern, Twitch</h3>
+                    <p><em>May 2016 - Sep 2016 (5 months)</em></p>
+                    <ul>
+                        <li>Optimized the buffering strategies of the web video player, reducing latency and improving the quality of live streams.</li>
+                        <li>Collaborated with video infrastructure engineers to analyze CDN performance, helping to ensure stable delivery of high-definition content to audiences worldwide.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-event">
+                    <div class="timeline-marker"></div>
+                    <h3>Software Engineering Intern, Google</h3>
+                    <p><em>May 2015 - Aug 2015 (4 months)</em></p>
+                    <p><u>Key Contributions:</u></p>
+                    <ul>
+                        <li><strong>Distributed Systems Optimization:</strong> Worked on a high-traffic distributed service supporting Google Search infrastructure. Improved the performance of indexing pipelines by analyzing query patterns and refactoring algorithms that processed large datasets, reducing query times significantly.</li>
+                        <li><strong>Tooling & Automation:</strong> Developed internal tools to visualize system metrics, enabling operations teams to identify bottlenecks more quickly. This proactive monitoring reduced incidents of downtime and improved overall service reliability.</li>
+                        <li><strong>Cross-Team Collaboration:</strong> Interfaced with senior engineers and product managers across multiple departments, gaining firsthand experience in coordinating large-scale rollouts and learning the importance of balancing innovation with stability in mission-critical services.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <p>Samantha’s rigorous academic background at MIT laid a strong theoretical and practical groundwork that informs every aspect of her engineering decision-making. She honed her ability to break down complex problems into solvable units, bridging cutting-edge research with pragmatic implementation strategies.</p>
+
+            <ul>
+                <li>
+                    <strong>Massachusetts Institute of Technology</strong><br>
+                    Master of Engineering (MEng) in Computer Systems (2017 - 2018)<br>
+                    <em>Contributions & Achievements:</em>
+                    <ul>
+                        <li>Specialized in distributed computing systems and fault-tolerant architectures, researching ways to ensure consistency and reliability in large-scale, data-intensive environments.</li>
+                        <li>Completed a thesis project focused on adaptive load balancing techniques, which later influenced her approaches at Twitch where scalability and uptime are paramount.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Massachusetts Institute of Technology</strong><br>
+                    Bachelor of Science (BS) in Computer Science and Electrical Engineering (2013 - 2017)<br>
+                    Activities & Societies: Eta Kappa Nu, Tau Beta Pi, Phi Beta Kappa<br>
+                    <em>Contributions & Achievements:</em>
+                    <ul>
+                        <li>Developed a strong foundation in algorithms, machine learning, computer architecture, and signal processing, enabling her to tackle complex engineering challenges with a versatile skill set.</li>
+                        <li>Engaged in undergraduate research projects on network security and IoT device synchronization, experiences that heightened her understanding of secure infrastructure—critical for her roles at Twitch.</li>
+                        <li>Actively participated in leadership roles within engineering societies, organizing hackathons and mentorship programs that nurtured the next generation of innovators.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Reflection:</strong><br>
+            At MIT, Samantha refined not only her technical acumen but also her capacity for critical thinking, collaboration, and swift iteration. The interdisciplinary nature of her training empowered her to navigate the full stack—from low-level hardware optimizations to high-level software abstractions—enabling holistic solutions that shine in dynamic industrial settings like Twitch and Google.</p>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages">
+            <h2>Languages</h2>
+            <p>Samantha’s multilingual abilities enhance her collaborative edge, allowing her to communicate effectively in cross-cultural engineering teams and better understand global user communities. Language skills are invaluable when working with diverse stakeholder groups, facilitating smoother interactions in an industry defined by global reach and rapid innovation.</p>
+            <ul>
+                <li><strong>English:</strong> Native or bilingual proficiency</li>
+                <li><strong>Korean:</strong> Limited working proficiency</li>
+                <li><strong>Chinese:</strong> Elementary proficiency</li>
+            </ul>
+
+            <p><strong>Reflection:</strong><br>
+            As Twitch and other international platforms continue to grow their user bases worldwide, Samantha’s comfort with multiple languages and cultural nuances contributes to more empathetic product decisions. Understanding the context in which users interact with technology helps shape features that are both intuitive and globally appealing.</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section">
+            <h2>Media Gallery</h2>
+            <p>Discover a curated set of images and media documenting Samantha’s journey—team celebrations at Twitch, glimpses of her time at MIT, and snapshots from industry events that capture the spirit of collaborative innovation.</p>
+            <div id="gallery"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section">
+            <h2>Contact Information</h2>
+            <p>For inquiries, opportunities, or to learn more about Samantha’s work, please feel free to reach out:</p>
+            <div class="contact-info">
+                <p><strong>Phone:</strong> 508-733-5654</p>
+                <p><strong>Email:</strong> <a href="mailto:sstewart.is1@gmail.com">sstewart.is1@gmail.com</a> | <a href="mailto:erosolar@twitch.tv">erosolar@twitch.tv</a> | <a href="mailto:erosolar@mit.edu">erosolar@mit.edu</a></p>
+                <p>Samantha welcomes collaborative discussions, whether you are a fellow engineer, a member of the streaming community, or a researcher exploring the future of digital interaction.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Samantha "Erosolar" Briasco-Stewart 508-733-5654 sstewart.is@gmail.com</p>
+    </footer>
+</body>
+</html>
